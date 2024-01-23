@@ -10,7 +10,7 @@ app.use(cors(
     }
 ));
 
-app.use('/uploads',express.static('uploads'))
+app.use('/uploads',express.static(__dirname + '/uploads'))
 
 app.use(cookieParser());
 app.use(express.urlencoded({extended:true}));
