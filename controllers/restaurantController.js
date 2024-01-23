@@ -4,16 +4,16 @@ exports.registerRestaurant = async (req,res)=>{
 
     // console.log(req.file);
     
-    const {restaurantName, restaurantAddress, restaurantNeighborhood} = req.body;
+    const {name, address, neighborhood} = req.body;
 
     const selectedPic = req.file?.path ?? '';
 
     try {
         
         const restaurant = await Restaurant.create({
-            restaurantName,
-            restaurantAddress,
-            restaurantNeighborhood,
+            name,
+            address,
+            neighborhood,
             photograph:selectedPic,
         });
 
